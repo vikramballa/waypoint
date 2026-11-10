@@ -1,0 +1,412 @@
+/*
+ * Design tokens v2 — "soft structuralism".
+ *
+ * Waypoint's palette, spacing and motion scale, tuned for a dense, modern
+ * work surface: cool-neutral greys, a single blue accent, a reserved violet
+ * for AI, layered tinted elevation and a spring-based motion scale.
+ */
+
+:root {
+  /* ---- typography -------------------------------------------------- */
+  --font-family: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, monospace;
+
+  --text-2xs: 10px;
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-md: 13px;
+  --text-base: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+  --text-2xl: 26px;
+  --text-3xl: 32px;
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-md: 13px;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 26px;
+  --font-size-3xl: 32px;
+
+  --leading-tight: 1.2;
+  --line-height-body: 21px;
+  --line-height-body: 21px;
+  --leading-body: 21px;
+  --leading-relaxed: 1.6;
+  --tracking-tight: -0.022em;
+  --tracking-normal: -0.008em;
+  --tracking-caps: 0.09em;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ---- spacing ----------------------------------------------------- */
+  --spacing-0: 0px;
+  --spacing-2: 2px;
+  --spacing-4: 4px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
+
+  /* ---- radii ------------------------------------------------------- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-2xl: 24px;
+  --radius-pill: 999px;
+
+  /* ---- structure --------------------------------------------------- */
+  --topbar-height: 56px;
+  --sidebar-width: 248px;
+  --row-height: 38px;
+  --board-column-width: 296px;
+  --pane-width: 600px;
+  --container-max: 1280px;
+
+  --avatar-xxsmall: 16px;
+  --avatar-xsmall: 20px;
+  --avatar-small: 24px;
+  --avatar-medium: 28px;
+  --avatar-large: 34px;
+  --avatar-xlarge: 44px;
+  --avatar-huge: 60px;
+
+  /* ---- motion ------------------------------------------------------ */
+  --ease-out: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.32, 0.64, 1);
+  --duration-fast: 140ms;
+  --duration-base: 220ms;
+  --duration-slow: 420ms;
+  --duration-enter: 620ms;
+  --animation-enter-small: 180ms;
+  --animation-enter-large: 320ms;
+  --animation-exit-small: 120ms;
+  --animation-exit-large: 200ms;
+  --animation-enter-opacity-small: 90ms;
+  --animation-enter-opacity-large: 180ms;
+  --animation-exit-opacity-small: 60ms;
+  --animation-exit-opacity-large: 120ms;
+
+  /* ---- z scale ----------------------------------------------------- */
+  --z-base: 1;
+  --z-sticky: 20;
+  --z-header: 40;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+
+  /* ---- light palette ---------------------------------------------- */
+  --color-text: #12151c;
+  --color-text-weak: #5b6473;
+  --color-text-weak-hover: #12151c;
+  --color-text-disabled: #a4abba;
+  --color-text-foreground: #ffffff;
+  --color-text-inverse: #ffffff;
+
+  --color-icon: #6a7284;
+  --color-icon-hover: #12151c;
+  --color-icon-active: #12151c;
+  --color-icon-disabled: #a9b0bd;
+  --color-icon-strong: #3e4657;
+  --color-icon-foreground: #ffffff;
+
+  --color-border: #e5e8ef;
+  --color-border-hover: #d2d7e2;
+  --color-border-active: #b6bdcc;
+  --color-border-strong: #d8dce5;
+
+  --color-background-weak: #ffffff;
+  --color-background: #ffffff;
+  --color-background-medium: #f4f6fa;
+  --color-background-strong: #eceff5;
+  --color-background-hover: rgba(17, 24, 39, 0.035);
+  --color-background-active: rgba(17, 24, 39, 0.07);
+  --color-background-hover-strong: rgba(17, 24, 39, 0.055);
+  --color-surface-raised: #ffffff;
+  /* work surface is crisp white; chrome (sidebar, board lanes) is tinted */
+  --color-canvas: #ffffff;
+  --color-canvas-tint: #f5f6f9;
+
+  --color-shadow-small: rgba(21, 30, 51, 0.045);
+  --color-shadow-medium: rgba(21, 30, 51, 0.08);
+  --color-shadow-large: rgba(21, 30, 51, 0.12);
+  --shadow-xs: 0 1px 1px rgba(21, 30, 51, 0.03);
+  --shadow-sm: 0 1px 2px rgba(21, 30, 51, 0.05), 0 1px 1px rgba(21, 30, 51, 0.03);
+  --shadow-md: 0 2px 4px rgba(21, 30, 51, 0.04), 0 10px 24px -14px rgba(21, 30, 51, 0.28);
+  --shadow-lg: 0 12px 40px -16px rgba(21, 30, 51, 0.35), 0 2px 6px rgba(21, 30, 51, 0.06);
+  --shadow-pop: 0 24px 60px -24px rgba(21, 30, 51, 0.4), 0 2px 8px rgba(21, 30, 51, 0.06);
+  --inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  --inset-highlight-strong: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  --shadow-primary: 0 1px 2px rgba(31, 61, 160, 0.3), 0 4px 10px -4px rgba(59, 102, 212, 0.45);
+  --shadow-card: 0 0 0 1px rgba(21, 30, 51, 0.07), 0 1px 2px rgba(21, 30, 51, 0.05);
+  --shadow-card-hover: 0 0 0 1px rgba(21, 30, 51, 0.1), 0 8px 20px -10px rgba(21, 30, 51, 0.25);
+
+  --color-selected-text: #2b56b4;
+  --color-selected-icon: #2b56b4;
+  --color-selected-border: #3b66d4;
+  --color-selected-background: #eef3ff;
+  --color-selected-background-hover: #e4ecff;
+  --color-selected-background-active: #d6e2ff;
+  --color-selected-background-strong: #3b66d4;
+  --color-selected-background-strong-hover: #2f55ba;
+
+  --color-primary-text: #2b56b4;
+  --color-primary-icon: #3b66d4;
+  --color-primary-border: #3b66d4;
+  --color-primary-background-strong: #3b66d4;
+  --color-primary-background-strong-hover: #2f55ba;
+  --color-primary-background-strong-active: #27489e;
+  --color-primary-soft: #eef3ff;
+
+  --color-a11y-selected-border-active: #3b66d4;
+  --color-focus-ring: #3b66d4;
+
+  --color-danger-text: #b42318;
+  --color-danger-icon: #e0483b;
+  --color-danger-border: #f5b5b0;
+  --color-danger-background: #fef3f2;
+  --color-danger-background-hover: #fee4e2;
+  --color-danger-background-strong: #d92d20;
+
+  --color-warning-text: #8a5a00;
+  --color-warning-border: #f4c98a;
+  --color-warning-background: #fffaeb;
+  --color-warning-icon: #dc9a0a;
+
+  --color-success-text: #087443;
+  --color-success-icon: #129c58;
+  --color-success-border: #a8e3c4;
+  --color-success-background: #ecfdf3;
+  --color-success-background-strong: #129c58;
+
+  --color-beta-text: #5b3fd6;
+  --color-beta-icon: #6d5cff;
+  --color-beta-background: #f2efff;
+  --color-beta-border: #d6cdfb;
+
+  --color-ai: #6d5cff;
+  --color-ai-soft: #f2efff;
+  --color-ai-gradient: linear-gradient(135deg, #6d5cff 0%, #a15cf0 55%, #ef6a9c 100%);
+
+  --color-logo-icon: #ff584a;
+  --color-logo-background-weak: #fff1ef;
+
+  --color-drop-target-background: rgba(255, 255, 255, 0.96);
+  --color-code-text: #8a5a00;
+  --color-backdrop: rgba(14, 18, 28, 0.44);
+
+  /* ---- object palette (from the shipped avatar tokens) ------------- */
+  --swatch-none-bg: #e9ecf2;
+  --swatch-none-fg: #5b6473;
+  --swatch-aqua-bg: #d3f4ec;
+  --swatch-aqua-fg: #04695c;
+  --swatch-blue-bg: #dbe7ff;
+  --swatch-blue-fg: #22499e;
+  --swatch-blue-green-bg: #d3f0ea;
+  --swatch-blue-green-fg: #075c51;
+  --swatch-cool-gray-bg: #e9ecf2;
+  --swatch-cool-gray-fg: #4c5668;
+  --swatch-green-bg: #d8f3e2;
+  --swatch-green-fg: #07683c;
+  --swatch-hot-pink-bg: #ffe0ed;
+  --swatch-hot-pink-fg: #a11f60;
+  --swatch-indigo-bg: #e6e3ff;
+  --swatch-indigo-fg: #3f34ac;
+  --swatch-magenta-bg: #ffe0f7;
+  --swatch-magenta-fg: #8f217d;
+  --swatch-orange-bg: #ffe8d6;
+  --swatch-orange-fg: #8f4a07;
+  --swatch-pink-bg: #ffe2e6;
+  --swatch-pink-fg: #9f2439;
+  --swatch-purple-bg: #f7e2ff;
+  --swatch-purple-fg: #77228f;
+  --swatch-red-bg: #ffe3e1;
+  --swatch-red-fg: #a51f18;
+  --swatch-yellow-bg: #fff2c2;
+  --swatch-yellow-fg: #6b5500;
+  --swatch-yellow-green-bg: #e9f5c8;
+  --swatch-yellow-green-fg: #48600f;
+  --swatch-yellow-orange-bg: #ffeac8;
+  --swatch-yellow-orange-fg: #7d5200;
+
+  --swatch-none-solid: #9aa3b2;
+  --swatch-aqua-solid: #12a594;
+  --swatch-blue-solid: #3b66d4;
+  --swatch-blue-green-solid: #1b9a89;
+  --swatch-cool-gray-solid: #7b8595;
+  --swatch-green-solid: #129c58;
+  --swatch-hot-pink-solid: #d94b91;
+  --swatch-indigo-solid: #5b52e0;
+  --swatch-magenta-solid: #b53fa0;
+  --swatch-orange-solid: #e8823a;
+  --swatch-pink-solid: #db6478;
+  --swatch-purple-solid: #9455d3;
+  --swatch-red-solid: #da4d43;
+  --swatch-yellow-solid: #d4a400;
+  --swatch-yellow-green-solid: #83a022;
+  --swatch-yellow-orange-solid: #de9412;
+}
+
+:root[data-theme="dark"] {
+  --color-text: #e8ebf2;
+  --color-text-weak: #98a1b3;
+  --color-text-weak-hover: #e8ebf2;
+  --color-text-disabled: #5b6474;
+  --color-text-foreground: #0c0e13;
+  --color-text-inverse: #0c0e13;
+
+  --color-icon: #98a1b3;
+  --color-icon-hover: #e8ebf2;
+  --color-icon-active: #e8ebf2;
+  --color-icon-disabled: #4d5565;
+  --color-icon-strong: #c8cfdd;
+  --color-icon-foreground: #0c0e13;
+
+  --color-border: #232936;
+  --color-border-hover: #303849;
+  --color-border-active: #445066;
+  --color-border-strong: #2b3342;
+
+  --color-background-weak: #14171f;
+  --color-background: #14171f;
+  --color-background-medium: #191d26;
+  --color-background-strong: #202632;
+  --color-background-hover: rgba(255, 255, 255, 0.045);
+  --color-background-active: rgba(255, 255, 255, 0.09);
+  --color-background-hover-strong: rgba(255, 255, 255, 0.07);
+  --color-surface-raised: #191d26;
+  --color-canvas: #0f1117;
+  --color-canvas-tint: #0b0d12;
+  --inset-highlight-strong: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  --shadow-primary: 0 1px 2px rgba(0, 0, 0, 0.5), 0 4px 12px -4px rgba(59, 102, 212, 0.5);
+  --shadow-card: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 10px 24px -12px rgba(0, 0, 0, 0.8);
+
+  --color-shadow-small: rgba(0, 0, 0, 0.4);
+  --color-shadow-medium: rgba(0, 0, 0, 0.5);
+  --color-shadow-large: rgba(0, 0, 0, 0.6);
+  --shadow-xs: 0 1px 1px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.35), 0 12px 32px -18px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 18px 48px -20px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-pop: 0 28px 70px -28px rgba(0, 0, 0, 0.85), 0 2px 10px rgba(0, 0, 0, 0.5);
+  --inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  --color-selected-text: #a9c2ff;
+  --color-selected-icon: #7ea3ff;
+  --color-selected-border: #4d76e0;
+  --color-selected-background: #1a2338;
+  --color-selected-background-hover: #1f2a44;
+  --color-selected-background-active: #26344f;
+  --color-selected-background-strong: #3b66d4;
+  --color-selected-background-strong-hover: #4d76e0;
+
+  --color-primary-text: #a9c2ff;
+  --color-primary-icon: #7ea3ff;
+  --color-primary-border: #4d76e0;
+  --color-primary-background-strong: #3b66d4;
+  --color-primary-background-strong-hover: #4977e2;
+  --color-primary-background-strong-active: #2f55ba;
+  --color-primary-soft: #1a2338;
+
+  --color-a11y-selected-border-active: #7ea3ff;
+  --color-focus-ring: #7ea3ff;
+
+  --color-danger-text: #ff9b91;
+  --color-danger-icon: #ff7a6b;
+  --color-danger-border: #5e2320;
+  --color-danger-background: #2a1412;
+  --color-danger-background-hover: #341917;
+  --color-danger-background-strong: #d92d20;
+
+  --color-warning-text: #f2c662;
+  --color-warning-border: #4d3a12;
+  --color-warning-background: #241c0a;
+  --color-warning-icon: #e0ab2c;
+
+  --color-success-text: #7ee2a8;
+  --color-success-icon: #37c07a;
+  --color-success-border: #164a2f;
+  --color-success-background: #0d2418;
+  --color-success-background-strong: #129c58;
+
+  --color-beta-text: #c1b6ff;
+  --color-beta-icon: #9b8bff;
+  --color-beta-background: #1d1930;
+  --color-beta-border: #3a3270;
+
+  --color-ai: #a695ff;
+  --color-ai-soft: #1d1930;
+  --color-ai-gradient: linear-gradient(135deg, #7f74ff 0%, #b06ef0 55%, #ff6f91 100%);
+
+  --color-logo-background-weak: #2a1412;
+  --color-drop-target-background: rgba(20, 23, 31, 0.96);
+  --color-code-text: #f2c662;
+  --color-backdrop: rgba(4, 6, 10, 0.62);
+
+  --swatch-none-bg: #2a3140;
+  --swatch-none-fg: #b6bfd0;
+  --swatch-blue-bg: #1b2740;
+  --swatch-blue-fg: #a9c2ff;
+  --swatch-aqua-bg: #0e2e2a;
+  --swatch-aqua-fg: #7fe3d3;
+  --swatch-green-bg: #10291c;
+  --swatch-green-fg: #8ce0b0;
+  --swatch-red-bg: #2e1513;
+  --swatch-red-fg: #ffa79c;
+  --swatch-orange-bg: #2f2011;
+  --swatch-orange-fg: #ffbd7d;
+  --swatch-yellow-bg: #2b2410;
+  --swatch-yellow-fg: #ffd977;
+  --swatch-purple-bg: #271630;
+  --swatch-purple-fg: #e2a9f5;
+  --swatch-pink-bg: #301522;
+  --swatch-pink-fg: #ffabc6;
+  --swatch-indigo-bg: #1d1b3a;
+  --swatch-indigo-fg: #c0b8ff;
+  --swatch-hot-pink-bg: #301427;
+  --swatch-hot-pink-fg: #ffa8ce;
+  --swatch-blue-green-bg: #0f2a27;
+  --swatch-blue-green-fg: #86dcd0;
+  --swatch-magenta-bg: #2c1430;
+  --swatch-magenta-fg: #f0a6ea;
+  --swatch-yellow-green-bg: #232a10;
+  --swatch-yellow-green-fg: #cfe38a;
+  --swatch-yellow-orange-bg: #2c2310;
+  --swatch-yellow-orange-fg: #ffcf8a;
+  --swatch-cool-gray-bg: #242a37;
+  --swatch-cool-gray-fg: #b3bccb;
+
+  --swatch-none-solid: #6b7688;
+  --swatch-blue-solid: #4d76e0;
+  --swatch-green-solid: #1fa763;
+  --swatch-red-solid: #d9544a;
+  --swatch-orange-solid: #d98a3f;
+  --swatch-yellow-solid: #c39a00;
+  --swatch-purple-solid: #8f5bd0;
+  --swatch-pink-solid: #cf5f78;
+  --swatch-aqua-solid: #169c8c;
+  --swatch-indigo-solid: #6a5fe8;
+  --swatch-hot-pink-solid: #c94d88;
+  --swatch-blue-green-solid: #1c8f80;
+  --swatch-magenta-solid: #a63f92;
+  --swatch-yellow-green-solid: #77901f;
+  --swatch-yellow-orange-solid: #c98a17;
+  --swatch-cool-gray-solid: #6f7a8c;
+}

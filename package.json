@@ -1,0 +1,38 @@
+{
+  "name": "waypoint",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && tsc --noEmit -p server && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p server",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "verify": "npm run typecheck && vitest run && vite build",
+    "e2e": "node scripts/e2e.mjs",
+    "check:csp": "node scripts/csp-check.mjs",
+    "build:server": "esbuild server/index.ts --bundle --platform=node --format=esm --packages=external --outfile=.server/index.mjs --log-level=warning",
+    "server": "npm run -s build:server && node --no-warnings=ExperimentalWarning .server/index.mjs",
+    "start": "npm run build && npm run -s build:server && SERVE_STATIC=1 PORT=${PORT:-5180} node --no-warnings=ExperimentalWarning .server/index.mjs",
+    "e2e:server": "node scripts/run-e2e-server.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "playwright": "^1.49.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  },
+  "description": "Waypoint \u2014 work management with live collaboration, server-enforced roles, AI teammates and dependency-aware planning."
+}

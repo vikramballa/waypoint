@@ -1,0 +1,17 @@
+{
+  "name": "Waypoint",
+  "short_name": "Waypoint",
+  "description": "Plan the route. Ship the work.",
+  "start_url": "/#/home",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b66d4",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    { "name": "My tasks", "url": "/#/my-tasks" },
+    { "name": "Inbox", "url": "/#/inbox" }
+  ]
+}
